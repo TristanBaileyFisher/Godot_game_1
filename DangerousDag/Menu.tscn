@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/MainMenu/Frame 4.png" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Resources/Fonts/JuliusSansOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Resources/Fonts/JuliusSansOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = SubResource( 3 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Frame4" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 832.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "dangerous dag"
+align = 1
+
+[node name="play" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 132.0
+margin_right = 608.0
+margin_bottom = 183.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "play"
+flat = true
+
+[node name="playline" type="Line2D" parent="play"]
+visible = false
+position = Vector2( 48.4325, 37.5999 )
+scale = Vector2( 0.743243, 0.100002 )
+points = PoolVector2Array( 0, 64, 128, 64 )
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="help" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 180.0
+margin_right = 608.0
+margin_bottom = 231.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "help"
+flat = true
+
+[node name="helpline" type="Line2D" parent="help"]
+visible = false
+position = Vector2( 48.4325, 37.5999 )
+scale = Vector2( 0.743243, 0.100002 )
+points = PoolVector2Array( 0, 64, 128, 64 )
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="about" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 228.0
+margin_right = 608.0
+margin_bottom = 279.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "about"
+flat = true
+
+[node name="aboutline" type="Line2D" parent="about"]
+visible = false
+position = Vector2( 27.6757, 37.5999 )
+scale = Vector2( 1.06757, 0.100002 )
+points = PoolVector2Array( 0, 64, 128, 64 )
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="quit" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 276.0
+margin_right = 576.0
+margin_bottom = 327.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "quit"
+flat = true
+
+[node name="quitline" type="Line2D" parent="quit"]
+visible = false
+position = Vector2( 12.1081, 36.6 )
+scale = Vector2( 0.810811, 0.1 )
+points = PoolVector2Array( 0, 64, 128, 64 )
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( -12.0269, 92.4 )
+scale = Vector2( 1.02349, 0.1 )
+points = PoolVector2Array( 224, 96, 800, 96, 512, 96 )
+default_color = Color( 0, 0, 0, 1 )
+
+[connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="help" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="help" to="." method="_on_help_mouse_entered"]
+[connection signal="mouse_exited" from="help" to="." method="_on_Button_mouse_exited"]
+[connection signal="mouse_exited" from="help" to="." method="_on_help_mouse_exited"]
+[connection signal="pressed" from="help" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="help" to="." method="_on_help_pressed"]
+[connection signal="mouse_entered" from="about" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="about" to="." method="_on_about_mouse_entered"]
+[connection signal="mouse_exited" from="about" to="." method="_on_Button_mouse_exited"]
+[connection signal="mouse_exited" from="about" to="." method="_on_about_mouse_exited"]
+[connection signal="pressed" from="about" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="about" to="." method="_on_about_pressed"]
+[connection signal="mouse_entered" from="quit" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="quit" to="." method="_on_Button_mouse_exited"]
+[connection signal="mouse_exited" from="quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="quit" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
